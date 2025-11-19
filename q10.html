@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fisher Rosement India News Network</title>
+  <style>
+    form{
+        width: 360px;
+        margin: 50px auto;
+        padding: 10px;
+        border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 align="center">Fisher Rosement India News Network</h2>
+
+  <form name="newsForm">
+    <label >Author:</label>
+    <input type="text" id="author"><br><br>
+
+    <label> Title :</label>
+    <input type="text" id="title"><br><br>
+
+    <label > Article:</label><br>
+    <textarea id="article" rows="3" cols="35"></textarea><br><br>
+
+    <input type="button" value="SUBMIT" onclick="showData()">
+    <input type="reset" value="RESET">
+  </form>
+
+  <script>
+    function showData() {
+      var author = document.getElementById("author").value;
+      var title = document.getElementById("title").value;
+      var article = document.getElementById("article").value;
+
+      alert("Author: " + author + "\nTitle: " + title + "\nArticle: " + article);
+    }
+  </script>
+
+</body>
+</html>
+

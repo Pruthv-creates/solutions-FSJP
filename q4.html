@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Grades</title>
+</head>
+<body>
+
+  <h2>Student Grades using prompt()</h2>
+  <button onclick="getStudentDetails()">Enter Student Details</button>
+
+  <script>
+    function getStudentDetails() {
+      let students = [];
+      let rollnos = [];
+      let scores = [];
+      let grades = [];
+
+      let n = parseInt(prompt("Enter number of students:"));
+
+      for (let i = 0; i < n; i++) {
+        let name = prompt("Enter name of student " + (i + 1) + ":");
+        let roll = prompt("Enter roll no of " + name + ":");
+        let score = parseInt(prompt("Enter score of " + name + ":"));
+
+        students.push(name);
+        rollnos.push(roll);
+        scores.push(score);
+
+        // Assign grades based on score
+        if (score > 81)
+          grades.push("A");
+        else if (score >= 61 && score <= 80)
+          grades.push("B");
+        else if (score >= 41 && score <= 60)
+          grades.push("C");
+        else
+          grades.push("D");
+      }
+
+      // Prepare formatted result.  by appending strings of each student details 
+      let result = "";
+      for (let i = 0; i < n; i++) {
+        // resukt = result +      " "
+        result += "Student " + (i + 1) + " : " + students[i] + "\n" +
+                  "Roll No : " + rollnos[i] + "\n" +
+                  "Score : " + scores[i] + "\n" +
+                  "Grade : " + grades[i] + "\n\n";
+      }
+
+      alert(result);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chemist Bill</title>
+  <style>
+    body {
+      text-align: center;
+    }
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      font-size: 18px;
+    }
+    th, td {
+      padding: 8px 20px;
+      text-align: center;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    #totaltxt {
+      font-weight: bold;
+      text-align: right;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h2>Chemist Bill Calculator</h2>
+
+  <form id="billForm">
+    <table  >
+      <tr>
+        <th>No.</th>
+        <th>Medicine Name</th>
+        <th>Rate</th>
+        <th>Quantity</th>
+        <th>Rupees</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>
+          <select id="med1" onchange="updateBill()">
+            <option value="0">Select</option>
+            <option value="15">Crocin</option>
+            <option value="10">Diclogem</option>
+            <option value="20">Paracetamol</option>
+          </select>
+        </td>
+        <td id="rate1">0</td>
+        <td><input type="number" id="qty1"  value="0" onchange="updateBill()"></td>
+        <td id="amt1">0.00</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>
+          <select id="med2" onchange="updateBill()">
+            <option value="0">Select</option>
+            <option value="15">Crocin</option>
+            <option value="10">Diclogem</option>
+            <option value="20">Paracetamol</option>
+          </select>
+        </td>
+        <td id="rate2">0</td>
+        <td><input type="number" id="qty2" value="0" onchange="updateBill()"></td>
+        <td id="amt2">0.00</td>
+      </tr>
+      <tr>
+        <td colspan="4" id="totaltxt">Total:</td>
+        <td id="totalvalue"> 0.0</td>
+      </tr>
+    </table>
+  </form>
+  
+
+  <script>
+    function updateBill() {
+      // Get medicine rates and quantities
+      let rate1 = parseFloat(document.getElementById("med1").value);
+      let rate2 = parseFloat(document.getElementById("med2").value);
+      let qty1 = parseInt(document.getElementById("qty1").value);
+      let qty2 = parseInt(document.getElementById("qty2").value);
+
+      // Calculate individual amounts
+      let amt1 = rate1 * qty1;
+      let amt2 = rate2 * qty2;
+
+      // Display in table
+      document.getElementById("rate1").innerText = rate1;
+      document.getElementById("rate2").innerText = rate2;
+      document.getElementById("amt1").innerText = amt1.toFixed(2);
+      document.getElementById("amt2").innerText = amt2.toFixed(2);
+
+      // Calculate total
+      let total = amt1 + amt2;
+      document.getElementById("totalvalue").innerText = total.toFixed(2);
+      document.getElementsByTagName("select").style.border="nonw"
+    }
+  </script>
+
+</body>
+</html>

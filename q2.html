@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Details</title>
+  <style>
+    form {
+      width: 300px;
+      margin: 50px auto;
+      border: 1px solid black;
+      padding: 10px;
+    }
+
+    #result{
+        width: 300px;
+        margin: auto;
+        border: 2px solid green;
+        padding: 20px;
+
+    }
+  </style>
+</head>
+<body>
+
+  <h3 align="center">Student Details Form</h3>
+
+  <form>
+    <label>First Name:</label><br>
+    <input type="text" id="fname"><br><br>
+
+    <label>Last Name:</label><br>
+    <input type="text" id="lname"><br><br>
+
+    <label>Email ID:</label><br>
+    <input type="email" id="email"><br><br>
+
+    <label>Contact No:</label><br>
+    <input type="text" id="contact"><br><br>
+
+    <label>Marks 1:</label><br>
+    <input type="number" id="m1"><br><br>
+
+    <label>Marks 2:</label><br>
+    <input type="number" id="m2"><br><br>
+
+    <label>Marks 3:</label><br>
+    <input type="number" id="m3"><br><br>
+
+    <input type="button" value="Calculate Percentage" onclick="calculatePercentage()">
+  </form>
+
+  <div id="result" > </div>
+
+  <script>
+    function calculatePercentage() {
+      // get all inputs
+      let fname = document.getElementById("fname").value;
+      let lname = document.getElementById("lname").value;
+      let email = document.getElementById("email").value;
+      let contact = document.getElementById("contact").value;
+
+      let m1 = parseFloat(document.getElementById("m1").value);
+      let m2 = parseFloat(document.getElementById("m2").value);
+      let m3 = parseFloat(document.getElementById("m3").value);
+
+      // calculate percentage
+      let total = m1 + m2 + m3;
+      let percent = (total / 300) * 100;
+
+      // show all details + percentage
+      document.getElementById("result").innerHTML =
+        "<h4>Student Details:</h4>" +
+        "Name: " + fname + " " + lname + "<br>" +
+        "Email: " + email + "<br>" +
+        "Contact: " + contact + "<br>" +
+        "Marks: " + m1 + ", " + m2 + ", " + m3 + "<br>" +
+        "Percentage: " + percent.toFixed(2) + "%";
+    }
+  </script>
+
+</body>
+</html>

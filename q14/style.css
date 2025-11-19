@@ -1,0 +1,27 @@
+/* Header styling */
+h2 {
+  color: red;
+  background-color: yellow;
+  text-align: center;
+  padding: 10px;
+  border: 1px double black;  /* double-lined border */
+}
+
+/* Table styling */
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border: 3px double black;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+
+img {
+  width: 60px;
+  height: 60px;
+}

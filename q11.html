@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Colors</title>
+  <style>
+    form {
+      width: 300px;
+      padding: 20px;
+      margin: 50px auto;
+      border: 1px solid black;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="colorForm">
+    <h3>Change Colors</h3>
+
+    <label>Background Color:</label><br>
+    <select id="bgcolor">
+      <option value="white">White</option>
+      <option value="lightblue">Light Blue</option>
+      <option value="lightgreen">Light Green</option>
+    </select><br><br>
+
+    <label>Text Color:</label><br>
+    <select id="textcolor">
+      <option value="black">Black</option>
+      <option value="red">Red</option>
+      <option value="blue">Blue</option>
+      <option value="green">Green</option>
+      <option value="purple">Purple</option>
+    </select><br><br>
+
+    <input id="btn" type="button" value="Change Color" onclick="changeColor()">
+  </form>
+
+  <script>
+    function changeColor() {
+      let bg = document.getElementById("bgcolor").value;
+      let text = document.getElementById("textcolor").value;
+      let form = document.getElementById("colorForm");
+      let btn = document.getElementById("btn");
+      let bgSelect = document.getElementById("bgcolor");
+      let textSelect = document.getElementById("textcolor");
+      //change color of form div
+      form.style.backgroundColor = bg;
+      form.style.color = text;
+      // change color of bg selector
+      bgSelect.style.backgroundColor = bg;
+      bgSelect.style.color = text;
+      //change color of text color selector 
+      textSelect.style.backgroundColor = bg;
+      textSelect.style.color = text;
+      //change color of bg
+      btn.style.backgroundColor = bg;
+      btn.style.color = text;
+    }
+  </script>
+
+</body>
+</html>
+

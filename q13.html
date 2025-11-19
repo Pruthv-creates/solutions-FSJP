@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Count Positive, Negative, and Zero</title>
+</head>
+<body>
+  <h2>Number Counter</h2>
+
+  <script>
+    let positiveCount = 0;
+    let negativeCount = 0;
+    let zeroCount = 0;
+
+    // Loop 10 times to take input
+    for (let i = 1; i <= 10; i++) {
+      let num = parseInt(prompt("Enter integer " + i + ":"));
+
+      if (num > 0) {
+        positiveCount++;
+      } else if (num < 0) {
+        negativeCount++;
+      } else {
+        zeroCount++;
+      }
+    }
+
+    // Display result using alert
+    alert(
+      "Results:\n" +
+      "Positive numbers: " + positiveCount + "\n" +
+      "Negative numbers: " + negativeCount + "\n" +
+      "Zeros: " + zeroCount
+    );
+  </script>
+</body>
+</html>

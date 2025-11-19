@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS CALC</title>
+</head>
+<body>
+  <script>
+// Simple Calculator using only JavaScript
+// Ask user for two numbers
+let num1 = parseFloat(prompt("Enter first number:"));
+let num2 = parseFloat(prompt("Enter second number:"));
+
+// Ask user to choose operation
+let operator = prompt("Enter operation (+, -, *, /):");
+
+// Variable to store result
+let result;
+
+// Perform calculation based on chosen operator. 
+// NOTE: = = = checks both data type and value
+if (operator === "+") {
+  result = num1 + num2;
+} else if (operator === "-") {
+  result = num1 - num2;
+} else if (operator === "*") {
+  result = num1 * num2;
+} else if (operator === "/") {
+  if (num2 !== 0) {
+    result = num1 / num2;
+  } else {
+    alert("Error! Division by zero not allowed.");
+  }
+} else {
+  alert("Invalid operator entered!");
+}
+
+// Show the result
+if (result !== undefined) {
+  alert("Result: " + result);
+}
+</script>  
+</body>
+</html>

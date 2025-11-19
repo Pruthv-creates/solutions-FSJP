@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Toy Library</title>
+  <style>
+    form {
+      width: 300px;
+      margin: 50px auto;
+      border: 1px solid black;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h3 align="center">Toy Library</h3>
+
+  <form>
+    <label>Select Toy:</label><br>
+    <select id="toy">
+      <option value="Teddy Bear">Teddy Bear</option>
+      <option value="Car">Car</option>
+      <option value="Train">Train</option>
+      <option value="Doll">Doll</option>
+      <option value="Blocks">Blocks</option>
+    </select><br><br>
+
+    <label>Quantity:</label><br>
+    <input type="number" id="qty"><br><br>
+
+    <label>Rent per Toy:</label><br>
+    <input type="number" id="rent"><br><br>
+
+    <input type="button" value="Generate Bill" onclick="generateBill()">
+  </form>
+
+  <div id="result" align="center"></div>
+
+  <script>
+    function generateBill() {
+      // get values
+      let toy = document.getElementById("toy").value;
+      let qty = parseInt(document.getElementById("qty").value);
+      let rent = parseFloat(document.getElementById("rent").value);
+
+      // calculate total
+      let total = qty * rent;
+
+      // display result
+      document.getElementById("result").innerHTML =
+        "<h4>Bill Details:</h4>" +
+        "Toy Name: " + toy + "<br>" +
+        "Quantity: " + qty + "<br>" +
+        "Rent per Toy: ₹" + rent + "<br>" +
+        "---------------------------<br>" +
+        "<b>Total Amount: ₹" + total.toFixed(2) + "</b>";
+    }
+  </script>
+
+</body>
+</html>

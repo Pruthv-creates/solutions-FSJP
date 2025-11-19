@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calculator</title>
+  <style>
+
+    form {
+      width: 300px;
+      border: 2px solid black;
+      margin : 30px auto;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    #result{
+     width: 300px;
+      
+      margin : 30px auto;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <h2 align="center">Simple Calculator</h2>
+
+  <form>
+    <!-- First number -->
+    <select id="num1">
+      <option value="">Select</option>
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select> <br><br>
+
+    <!-- Operator -->
+    <select id="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select><br><br>
+
+    <!-- Second number -->
+    <select id="num2">
+      <option value="">Select</option>
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select><br><br>
+    <br>
+
+    <button type="button" onclick="calculate()">CALCULATE</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    function calculate() {
+      let num1 = parseFloat(document.getElementById("num1").value);
+      let num2 = parseFloat(document.getElementById("num2").value);
+      let op = document.getElementById("operator").value;
+
+      if (isNaN(num1) || isNaN(num2)) {
+        document.getElementById("result").innerHTML = "⚠️ Please select two numbers!";
+        return;
+      }
+
+      let result;
+
+      if (op === '+') result = num1 + num2;
+      else if (op === '-') result = num1 - num2;
+      else if (op === '*') result = num1 * num2;
+      else if (op === '/') {
+        if(num2 ===0 ) result="cannot divide by zero" ;
+        else result=num1/num2;
+      }
+
+      document.getElementById("result").style.border="3px solid black" ;
+      document.getElementById("result").innerHTML = `Result: ${result}`;
+    }
+  </script>
+
+</body>
+</html>

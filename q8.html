@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bg changer</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h3 align="center">Background changer</h3>
+
+    <form>
+        <label>Select color</label>
+        <input type="radio" name="colorbg" value="red" onclick="changebgcolor(this.value)">red
+        <input type="radio" name="colorbg" value="green" onclick="changebgcolor(this.value)">green
+        <input type="radio" name="colorbg" value="blue" onclick="changebgcolor(this.value)">blue
+    </form>
+
+    <script>
+        function changebgcolor(selectedcolor){
+            document.bgColor=selectedcolor;
+        }
+    </script>
+</body>
+
+</html>

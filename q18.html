@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Placement Registration Form</title>
+  <style>
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      border: 1px solid #ccc;
+      padding: 20px;
+      width: 350px;
+      margin: 50px auto;
+    }
+
+    label {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    input, select, textarea {
+      width: 95%;
+      padding: 6px;
+      margin: 8px 0;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+    }
+
+    input[type="submit"], input[type="reset"] {
+      width: 48%;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    input[type="reset"] {
+      background-color: #f44336;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    input[type="reset"]:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Online Placement Registration Form</h2>
+
+  <form>
+    <label>Full Name:</label><br>
+    <input type="text" placeholder="Enter your full name" required><br>
+
+    <label>Email ID:</label><br>
+    <input type="email" placeholder="Enter your email" required><br>
+
+    <label>Contact Number:</label><br>
+    <input type="tel" placeholder="Enter contact number" required><br>
+
+    <label>Gender:</label><br>
+    <input type="radio" name="gender" value="Male"> Male
+    <input type="radio" name="gender" value="Female"> Female
+    <input type="radio" name="gender" value="Other"> Other
+    <br><br>
+
+    <label>Qualification:</label><br>
+    <select>
+      <option value="">--Select Qualification--</option>
+      <option value="B.Tech">B.Tech</option>
+      <option value="M.Tech">M.Tech</option>
+      <option value="MBA">MBA</option>
+      <option value="BCA">BCA</option>
+      <option value="MCA">MCA</option>
+    </select><br>
+
+    <label>Year of Passing:</label><br>
+    <input type="number" placeholder="e.g. 2025" required><br>
+
+    <label>Skills:</label><br>
+    <textarea rows="3" placeholder="Enter your technical skills"></textarea><br>
+
+    <input type="submit" value="Register">
+    <input type="reset" value="Reset">
+  </form>
+
+</body>
+</html>

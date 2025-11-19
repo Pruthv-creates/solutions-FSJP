@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Form</title>
+  <style>
+
+    form{
+        width: 300px;
+        border:2px solid blue;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    input {
+      padding: 5px;
+      margin: 5px;
+    }
+
+    /* Default color */        /* even if we removw this part it doesnt matter*/
+    input[type="text"], input[type="password"] {
+      background-color: white;
+    }
+
+    /* When mouse hovers (mouseover) */
+    input[type="text"]:hover, input[type="password"]:hover {
+      background-color: yellow;
+    }
+
+    input[type=submit]:hover{
+        background-color: yellowgreen;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h2 align="center">Login Form</h2>
+
+  <form onsubmit="return validateForm()">
+    <label>Username:</label><br>
+    <input type="text" id="username"><br><br>
+
+    <label>Password:</label><br>
+    <input type="password" id="password"><br><br>
+
+    <!-- <button onclick="validateForm()">SUBMIT</button> -->
+     <input type="submit" id="submit" value="submit" style="align-content: center;">
+  </form>
+
+  <p id="msg"></p>
+
+  <script>
+    function validateForm() {
+      let password = document.getElementById("password").value;
+      let message = document.getElementById("msg");
+
+      // Check length and alphanumeric
+      let isAlphanumeric = /^[a-zA-Z0-9]+$/.test(password);  // test checks regex is true or false
+
+      if (password.length < 12) {
+        message.innerHTML = " Password must be at least 12 characters long.";
+        message.style.color = "red";
+        return false; //prevent actual form submission . if we dont do this the text will disappear immediately on submit 
+      } 
+      else if (!isAlphanumeric) {
+        message.innerHTML = " Password must be alphanumeric (letters + numbers only).";
+        message.style.color = "red";
+        return false; //prevent actual form submission (for demo)
+      } 
+      else {
+        message.innerHTML = " Login Successful!";
+        message.style.color = "green";
+        return false; // prevent actual form submission (for demo)
+      }
+    }
+  </script>
+
+</body>
+</html>
+
